@@ -12,7 +12,7 @@ import java.awt.event.*;
  * and must guess all of the coordinates of the enemy's battleships within 40 moves. If the 
  * player is unable to do so, then they lose, otherwise, they win. 
  */
-public class GameTry extends JFrame
+public class Battleship extends JFrame
 {
     // Create global vars for access within all methods
     private final static int NUMBER_OF_GAME_SLOTS = 14;
@@ -40,7 +40,7 @@ public class GameTry extends JFrame
     /**
      * Sets up the components of the GUI
      */
-    GameTry() throws UnsupportedAudioFileException, IOException, LineUnavailableException
+    Battleship() throws UnsupportedAudioFileException, IOException, LineUnavailableException
     {  
         initializeStarterVariables();
         
@@ -398,7 +398,7 @@ public class GameTry extends JFrame
              public void run() 
            {
                  try{
-                    new GameTry();
+                    new Battleship();
                  }
                 catch(Exception e)
                {
