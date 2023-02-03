@@ -90,8 +90,8 @@ public class GameTry extends JFrame
      * Creates the labels for the screen 
      */
     private void createTitleScreenLabels()
-    {
-        // JLabel ship = new JLabel();
+    {   
+        // Set main screen icon 
         ImageIcon battleship = new ImageIcon("images/battleship.png");
         ship.setIcon(battleship);
         ship.setVerticalAlignment(JLabel.BOTTOM);
@@ -128,7 +128,6 @@ public class GameTry extends JFrame
         
         // set color of the button
         button.setBackground(new Color(0xEEB22F));
-        //button.setBorder(new LineBorder(Color.white, 3));
         button.setBorder(BorderFactory.createRaisedBevelBorder());
         button.setBounds(150,50,300,50);
         bottomPanel.add(button);
@@ -145,8 +144,8 @@ public class GameTry extends JFrame
             {
                 try{
                     
-                    // MyThread missile = new MyThread("shot.wav", false);
-                    // missile.start();   
+                    MyThread missile = new MyThread("shot.wav", false);
+                    missile.start();   
                     nextWindow();
                     
                 }
@@ -194,7 +193,6 @@ public class GameTry extends JFrame
     
            centerPanel.setLayout(new GridLayout(0,11,1,1));
            this.setResizable(true);
-           //button.setVisible(false);
            ship.setVisible(false);
            this.setBackground(Color.black);
            createBoard();
@@ -284,8 +282,8 @@ public class GameTry extends JFrame
                 checkMoves();
                                 
                 // have button emit sound
-                // MyThread beep = new MyThread("beep.wav", false);
-                // beep.start();
+                MyThread beep = new MyThread("beep.wav", false);
+                beep.start();
                                 
             }
         });
@@ -357,7 +355,6 @@ public class GameTry extends JFrame
         else
             title.setText("YOU LOSE!");
         topPanel.setLayout(new BorderLayout());
-        // topPanel.add(title, BorderLayout.CENTER);
         score.setText("Total Moves: " + (MAXIMUM_SCORE - playerMoves));
         score.setFont(new Font("Baskerville", Font.BOLD, 25));
         topPanel.add(title, BorderLayout.CENTER);
